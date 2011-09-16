@@ -1,0 +1,16 @@
+bin_PROGRAMS=sleepy
+sleepy_SOURCES=main.vala sleeptimer.vala wizard.vala
+
+INCLUDES = \
+	-include config.h \
+	$(SLEEPY_CFLAGS) \
+	-DLOCALEDIR=\""$(localedir)"\" \
+	-DPKGDATADIR=\""$(pkgdatadir)"\" \
+	-DPKGLIBDIR=\""$(pkglibdir)"\"
+
+VALAFLAGS = \
+	--pkg config \
+	@SLEEPY_PACKAGES@
+
+sleepy_LDADD = \
+	$(SLEEPY_LIBS)

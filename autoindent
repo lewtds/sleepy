@@ -1,0 +1,3 @@
+#!/bin/bash
+
+astyle -r -n --mode=cs --style=gnu "src/*.vala"
