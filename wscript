@@ -82,48 +82,26 @@ def configure(conf):
         args            = '--cflags --libs')
         
 
-                
-    """
-    conf.check_cfg(
-        package         = 'gthread-2.0',
-        uselib_store    = 'GTHREAD',
-        atleast_version = glib_package_version,
-        args            = '--cflags --libs')
-"""
-
     conf.check_cfg(
         package         = gtk_package_name,
         uselib_store    = 'GTK',
         atleast_version = '2.16',
         args            = '--cflags --libs')
-        
+
+    """
     conf.check_cfg(
         package         = 'gee-1.0',
         uselib_store    = 'GEE',
         atleast_version = '0.1',
         args            = '--cflags --libs')        
-        
+    """ 
+       
     conf.check_cfg(
         package         = 'libnotify',
         uselib_store    = 'NOTIFY',
         atleast_version = '0.1',
         args            = '--cflags --libs')               
-    """
-    try:
-        conf.check_cfg(
-            package         = vte_package_name,
-            uselib_store    = 'VTE',
-            atleast_version = '0.26',
-            args            = '--cflags --libs')
-        conf.env.VALAFLAGS.extend(['--define=VTE_SUP_0_26'])
-    except waflib.Errors.ConfigurationError:
-        conf.check_cfg(
-            package         = vte_package_name,
-            uselib_store    = 'VTE',
-            max_version     = '0.26',
-            atleast_version = '0.20',
-            args            = '--cflags --libs')
-"""
+
     # Add /usr/local/include for compilation under OpenBSD
     conf.env.CFLAGS.extend(['-pipe', '-I/usr/local/include', '-include', 'config.h'])
     conf.define('VERSION', VERSION)
@@ -152,7 +130,7 @@ def build(bld):
         
     _packages      = ['libnotify','gee-1.0','config','posix']
     _packages.append(bld.options.with_gtk3 and 'gtk+-3.0' or 'gtk+-2.0')
-    _uselib = ['GLIB', 'GOBJECT', 'GTK', 'GEE', 'NOTIFY']
+    _uselib = ['GLIB', 'GOBJECT', 'GTK', 'NOTIFY']
     if bld.env.with_appindicator == True:
         _packages.append(bld.options.with_gtk3 and 'appindicator3-0.1' or 'appindicator-0.1')
         _uselib.append('APPINDICATOR')

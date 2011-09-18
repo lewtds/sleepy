@@ -1,0 +1,3 @@
+Please run:
+# ./waf configure build install [--with-gtk3] [--disable-nls] [--with-unity]
+
