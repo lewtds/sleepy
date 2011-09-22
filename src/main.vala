@@ -3,7 +3,67 @@
 using Config;
 using Gtk;
 
-void main (string[] args)
+void print_help()
+{
+
+}
+
+DateTime? parse_time(string args)
+requires (args.length > 3 && args.length <8)
+{
+
+  var now = new DateTime.now_local();
+  if (!(":" in args))
+    {
+      return null;
+    }
+  else
+    {
+      var timestring = args.split(":");
+      int hour = timestring[0].to_int();
+      //TODO: add support for the AM/PM nomenclature
+      //6:24PM or 6:24
+      print("%d\n", timestring[1].length);
+      if (timestring[1].length != 4 && timestring[1].length !=2) return null;
+
+      //Convert 12-hour to 24-hour
+      //eliminate possibilities like 13:00PM
+      //if (/[AaPp][Mm]/.match(timestring[1]) && (hour >12)) return null;
+
+      if (/[Aa][Mm]/.match(timestring[1]))
+        {
+          timestring[1] = timestring[1][0:-2];
+        }
+      else if (/[Pp][Mm]/.match(args))
+        {
+          //TODO: what'll happen if hour = 12 ?
+          hour +=12;
+          timestring[1] = timestring[1][0:-2];
+        }
+
+      int minute = timestring[1].to_int();
+
+      //Compare
+      if ((hour <= now.get_hour()) && (minute <= now.get_minute()) )
+        {
+          //next day?
+          //TODO: test month bound
+          now = new DateTime.local(now.get_year(), now.get_month(),
+                                   now.get_day_of_month()+1,hour, minute,0);
+        }
+      else
+        {
+          now = new DateTime.local(now.get_year(), now.get_month(),
+                                   now.get_day_of_month(), hour, minute,0);
+        }
+    }
+  print (now.format("%x %X"));
+  //return new DateTime();
+  return now;
+}
+
+
+int main (string[] args)
 {
 
   Intl.setlocale(LocaleCategory.ALL, "");
@@ -32,7 +92,9 @@ void main (string[] args)
     }
   else if (args.length == 2 )
     {
-      timer = new SleepTimer(new DateTime.now_local().add_hours(8));
+      var target = parse_time(args[1]);
+      if (target == null) return -1;
+      timer = new SleepTimer(target);
       var noti = new TimerNotification(timer);
       timer.choose_target(1);
       timer.start();
@@ -46,5 +108,6 @@ void main (string[] args)
   */
   Gtk.main();
   Notify.uninit();
+  return 0;
 }
 

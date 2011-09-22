@@ -26,7 +26,7 @@ class SleepTimer
     this.wake_up_time = wake_up_time;
     _set_sleep_targets();
   }
-  
+
   public void set_new_wake_up_time(DateTime new_wake_up_time)
   requires (new_wake_up_time.difference(new DateTime.now_local()) > 6300000 ) //90 mins + 15 mins
   {
