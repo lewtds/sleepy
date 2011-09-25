@@ -95,10 +95,9 @@ int main (string[] args)
       var target = parse_time(args[1]);
       if (target == null) return -1;
       timer = new SleepTimer(target);
-      var noti = new TimerNotification(timer);
-      timer.choose_target(1);
-      timer.start();
-
+      timer.choose_target(0);
+      if (!timer.start()) return -1;
+	  
     }
   /*
   var wake_up_time = new DateTime.now_local().add_hours(8);

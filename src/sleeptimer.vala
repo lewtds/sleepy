@@ -39,15 +39,20 @@ class SleepTimer
     current_target = sleep_targets.index(target_number);
   }
 
-  public void start()
+  public bool start()
   {
     if ((current_target != null) && !running)
       {
-        //print("Timer started\n");
+        print("Timer started\n");
         running = true;
         Timeout.add_seconds(60,every_minute);
         started();
       }
+    else {
+		print("Error: current_target == null!\n");
+		
+		}
+		return running;
   }
 
   public void stop()

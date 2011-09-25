@@ -91,7 +91,7 @@ class TimerNotification
               //Vala 0.14.0 doesn't support string literal concatenation yet :(
               string body = _("and if not intercepted en route it will go off at %s. That's %s to go. Have fun! ;)").printf(
                 timer.current_target.format("%I:%M %p"),timer.time_left_to_string());
-              noti.update(message, body, "appointment-soon" );
+              noti.update(message, body, null );
               noti.show();
               //print("Notification sent:%s\n",message);
             }
