@@ -128,7 +128,7 @@ def build(bld):
     if bld.env.disable_nls == False:
         bld(features = 'intltool_po', appname = APPNAME, podir = 'po')
         
-    _packages      = ['libnotify','gee-1.0','config','posix']
+    _packages      = ['libnotify','config','posix']
     _packages.append(bld.options.with_gtk3 and 'gtk+-3.0' or 'gtk+-2.0')
     _uselib = ['GLIB', 'GOBJECT', 'GTK', 'NOTIFY']
     if bld.env.with_appindicator == True:

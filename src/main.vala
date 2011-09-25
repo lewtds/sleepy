@@ -96,6 +96,7 @@ int main (string[] args)
       if (target == null) return -1;
       timer = new SleepTimer(target);
       timer.choose_target(0);
+      var noti = new TimerNotification(timer);
       if (!timer.start()) return -1;
 	  
     }

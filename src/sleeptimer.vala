@@ -18,7 +18,7 @@
  */
 
 //TODO: add custom notification message/presets
-class SleepTimer
+class SleepTimer : GLib.Object
 {
 
   public SleepTimer(DateTime wake_up_time)
