@@ -131,7 +131,7 @@ def build(bld):
     _packages      = ['libnotify','config','posix']
     _packages.append(bld.options.with_gtk3 and 'gtk+-3.0' or 'gtk+-2.0')
     _uselib = ['GLIB', 'GOBJECT', 'GTK', 'NOTIFY']
-    if bld.env.with_appindicator == True:
+    if bld.options.with_appindicator == True:
         _packages.append(bld.options.with_gtk3 and 'appindicator3-0.1' or 'appindicator-0.1')
         _uselib.append('APPINDICATOR')
 
