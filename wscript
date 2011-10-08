@@ -29,8 +29,8 @@ def options(opt):
                    action = 'store_true',
                    default = False)
                    
-    opt.add_option('--with-appindicator',
-                   help = 'Compile with AppIndicator support.',
+    opt.add_option('--no-appindicator',
+                   help = 'Compile without AppIndicator support.',
                    action = 'store_true',
                    default = False)
                    
@@ -60,7 +60,7 @@ def configure(conf):
 
     #vte_package_name = conf.options.with_gtk3 and 'vte-2.90' or 'vte'
 
-    if conf.options.with_appindicator == True:
+    if conf.options.no_appindicator != True:
         appindicator_package_name = conf.options.with_gtk3 and 'appindicator3-0.1' or 'appindicator-0.1'
         conf.check_cfg(
             package         = appindicator_package_name,
@@ -88,13 +88,13 @@ def configure(conf):
         atleast_version = '2.16',
         args            = '--cflags --libs')
 
-    """
+
     conf.check_cfg(
         package         = 'gee-1.0',
         uselib_store    = 'GEE',
         atleast_version = '0.1',
         args            = '--cflags --libs')        
-    """ 
+ 
        
     conf.check_cfg(
         package         = 'libnotify',
@@ -128,10 +128,10 @@ def build(bld):
     if bld.env.disable_nls == False:
         bld(features = 'intltool_po', appname = APPNAME, podir = 'po')
         
-    _packages      = ['libnotify','config','posix']
+    _packages      = ['libnotify','config','posix', 'gee-1.0']
     _packages.append(bld.options.with_gtk3 and 'gtk+-3.0' or 'gtk+-2.0')
-    _uselib = ['GLIB', 'GOBJECT', 'GTK', 'NOTIFY']
-    if bld.options.with_appindicator == True:
+    _uselib = ['GLIB', 'GOBJECT', 'GTK', 'NOTIFY', 'GEE']
+    if bld.options.no_appindicator != True:
         _packages.append(bld.options.with_gtk3 and 'appindicator3-0.1' or 'appindicator-0.1')
         _uselib.append('APPINDICATOR')
 
@@ -143,7 +143,8 @@ def build(bld):
         source        = ['src/main.vala',
                          'src/sleeptimer.vala',
                          'src/wizard.vala',
-                         'src/trayicon.vala'])
+                         'src/trayicon.vala',
+                         'src/utility.vala'])
 
 def dist(ctx):
     ctx.excl = '**/.*'
