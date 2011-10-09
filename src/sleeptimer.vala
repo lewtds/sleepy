@@ -62,10 +62,14 @@ class SleepTimer : GLib.Object
         private ArrayList<DateTime> sleep_targets;
         public DateTime current_target
         {
-			get;
-			private set;
-		}
-        public DateTime wake_target {get; private set;}
+                get;
+                private set;
+        }
+        public DateTime wake_target
+        {
+                get;
+                private set;
+        }
         private bool running
         {
                 get;

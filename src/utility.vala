@@ -7,7 +7,7 @@ requires (time.length > 3 && time.length <8)
                 return null;
         } else {
                 var timestring = time.split(":");
-                int hour = timestring[0].to_int();
+                int hour = int.parse(timestring[0]);
                 //TODO: add support for the AM/PM nomenclature
                 //6:24PM or 6:24
                 //print("%d\n", timestring[1].length);
@@ -25,7 +25,7 @@ requires (time.length > 3 && time.length <8)
                         timestring[1] = timestring[1][0:-2];
                 }
 
-                int minute = timestring[1].to_int();
+                int minute = int.parse(timestring[1]);
 
 
                 if ((hour < now.get_hour()) || (hour == now.get_hour() && minute <= now.get_minute()) ) {

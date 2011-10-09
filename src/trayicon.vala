@@ -6,9 +6,9 @@ class TimerControl : GLib.Object
 {
         public TimerControl()
         {
-                indicator = new Indicator("Sleep Timer Indicator", "appointment-soon", IndicatorCategory.APPLICATION_STATUS);
+                indicator = new Indicator(_("Sleep Timer Indicator"), "appointment-soon", IndicatorCategory.APPLICATION_STATUS);
                 indicator.set_status(IndicatorStatus.ACTIVE);
-				build_initial_menu();
+                build_initial_menu();
         }
         public TimerControl.non_interactive(DateTime wake_target)
         {
@@ -24,38 +24,39 @@ class TimerControl : GLib.Object
                 timer.on_every_minute.connect(indicator_loop);
                 timer.start();
 
-                
+
 //Note: We are building the menu upward
 
-                stop_button = new MenuItem.with_label("Stop");
+                stop_button = new MenuItem.with_label(_("Stop"));
                 stop_button.activate.connect(()=> {
                         timer.stop();
-build_initial_menu();
+                        build_initial_menu();
                 });
                 stop_button.show();
                 menu.prepend(stop_button);
-                                
+
                 var separator = new SeparatorMenuItem();
                 separator.show();
                 menu.prepend(separator);
-                
+
                 //Remaining time
-                time_label = new MenuItem.with_label("%s left".printf(timespan_to_string(timer.get_remaining())));
+                time_label = new MenuItem.with_label(_("%s left").printf(timespan_to_string(timer.get_remaining())));
                 time_label.show();
                 menu.prepend(time_label);
                 separator = new SeparatorMenuItem();
                 separator.show();
                 menu.prepend(separator);
-                                
-                                //Show alarm target
+
+                //Show alarm target
                 var item = new MenuItem.with_label("%s -> %s".printf(timer.current_target.format("%I:%M %p"), timer.wake_target.format("%I:%M %p")));
                 item.show();
                 menu.prepend(item);
         }
-        
-        private void build_initial_menu() {
+
+        private void build_initial_menu()
+        {
                 menu = new Menu();
-                var item = new MenuItem.with_label("Set Timer");
+                var item = new MenuItem.with_label(_("Set Timer"));
                 /*item.activate.connect(() => {
                 	timer.start();
                 	});*/
@@ -89,18 +90,18 @@ build_initial_menu();
                 item.set_submenu(sub);
                 item.show();
                 menu.append(item);
-                
-				item = new SeparatorMenuItem();
+
+                item = new SeparatorMenuItem();
                 item.show();
                 menu.append(item);
-                
-                item = new MenuItem.with_label("Quit");
+
+                item = new MenuItem.with_label(_("Quit"));
                 item.activate.connect(Gtk.main_quit);
                 item.show();
                 menu.append(item);
 
                 indicator.set_menu(menu);
-			}
+        }
         private void indicator_loop()
         {
                 //Update the indicator status, icon,etc...
@@ -130,8 +131,8 @@ class TimerNotification : GLib.Object
                 timer.started.connect(() => {
                         try {
 
-                                noti.update(_("The clock has started!"),
-                                _("And will go off at %s. You have %s left, have fun!").printf(timer.current_target.format("%I:%M %p"),
+                                noti.update(_("The clock is ticking..."),
+                                _("And it will go off at %s. You have %s left, have fun :-j").printf(timer.current_target.format("%I:%M %p"),
                                 timespan_to_string(timer.get_remaining())),
                                 "appointment-soon");
                                 noti.show();
@@ -168,7 +169,7 @@ class TimerNotification : GLib.Object
                                 noti.show();
                                 break;
                         case 5:
-                                noti.update(_("5 minutes left..."), _("Please save your work and get ready for bed. :)"), "appointment-soon");
+                                noti.update(_("5 minutes left..."), _("Please save your work and get ready for bed. ZzzZzz"), "appointment-soon");
                                 noti.show();
                                 break;
                         }
