@@ -124,7 +124,11 @@ def configure(conf):
 
     conf.write_config_header('config.h')
 
+def prebuild(bld):
+    bld.exec_command('./autoindent')
+    
 def build(bld):
+    bld.add_pre_fun(prebuild)
     if bld.env.disable_nls == False:
         bld(features = 'intltool_po', appname = APPNAME, podir = 'po')
         
@@ -145,6 +149,15 @@ def build(bld):
                          'src/wizard.vala',
                          'src/trayicon.vala',
                          'src/utility.vala'])
+    bld(
+    features="intltool_in",
+    podir="po",
+    flags = ("-d", "-q", "-u", "-c"),
+    source = "data/sleepy.desktop"  + ".in",
+    target = "data/sleepy.desktop",
+    install_path = "${DATADIR}/applications",
+    chmod = 0o755,
+    ) 
 
 def dist(ctx):
     ctx.excl = '**/.*'

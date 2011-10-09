@@ -1,3 +1,11 @@
-Please run:
-# ./waf configure build install [--with-gtk3] [--disable-nls] [--no-appindicator]
+To install, please run these commands:
+$ ./waf configure build [--with-gtk3] [--disable-nls] --prefix=/usr
+$ sudo ./waf install
+
+Build dependencies (for a Ubuntu system, please refer to your distribution naming scheme for equivalent):
+- libappindicator-dev
+- libgee-dev
+- libnotify-dev
+- libgtk2.0-dev or libgtk-3-dev (with gtk3)
+- valac >= 0.10.0 (without gtk3) or >= 0.13.2 (with gtk3)
 
