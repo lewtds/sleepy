@@ -12,22 +12,3 @@
 %:
 	dh $@ 
 
-WAF=./waf
-
-override_dh_auto_clean:
-	$(WAF) --nocache distclean
-	rm -rf _build_
-	rm -rf .waf*
-	rm -rf .lock-wscript
-
-override_dh_auto_configure:
-	$(WAF) --nocache configure --prefix /usr
-
-override_dh_auto_build:
-	$(WAF) build --nocache -v
-	
-override_dh_auto_install:
-	$(WAF) --nocache install --destdir debian/sleepy
-	#rm -f debian/tmp/usr/share/doc/midori/COPYING debian/tmp/usr/share/doc/midori/TRANSLATE
-	#install -m 0644 debian/$(DISTRO)-config debian/tmp/etc/xdg/midori/config
-
