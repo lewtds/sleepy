@@ -1,8 +1,9 @@
-sleepy (0.1.1) precise; urgency=low
+sleepy (0.1.2-1) precise; urgency=low
 
   * Add more dependencies
+  * Switch to cmake
 
- -- Trung Ngo (Chin) <ndtrung4419@gmail.com>  Tue, 10 Jul 2012 00:01:13 +0700
+ -- Trung Ngo (Chin) <ndtrung4419@gmail.com>  Tue, 10 Jul 2012 13:40:02 +0700
 
 sleepy (0.1.1-1) precise; urgency=low
 
