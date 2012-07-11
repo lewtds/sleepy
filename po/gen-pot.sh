@@ -3,9 +3,9 @@
 # Searches trough all vala files of Gnome-Pie and generates
 # a gnomepie.pot for strings which need to be translated.
 
-domain="@APPNAME@"
-version="@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@"
-copyright="@COPYRIGHT@"
+domain="sleepy"
+version="0.1.2"
+copyright="Ngo Trung <ndtrung4419@gmail.com>"
 
 #filelist=$( find ../ui/ -name '*.ui' -printf "%h/%f " )
 #xgettext --package-name $domain \

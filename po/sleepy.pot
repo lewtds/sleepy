@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sleepy 0.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 10:46+0700\n"
+"POT-Creation-Date: 2012-07-11 12:48+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,10 +85,10 @@ msgstr ""
 msgid "Please save your work and get ready for bed. ZzzZzz"
 msgstr ""
 
-#: ../data/sleepy.desktop.template.h:1
+#: ../data/sleepy.desktop.template.in.h:1
 msgid "Sleep Timer"
 msgstr ""
 
-#: ../data/sleepy.desktop.template.h:2
+#: ../data/sleepy.desktop.template.in.h:2
 msgid "Tell you the best time to go to sleep"
 msgstr ""
