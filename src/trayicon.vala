@@ -6,7 +6,9 @@ class TimerControl : GLib.Object
 {
         public TimerControl()
         {
-                indicator = new Indicator(_("Sleep Timer Indicator"), "appointment-soon", IndicatorCategory.APPLICATION_STATUS);
+                indicator = new Indicator(_("Sleep Timer Indicator"),
+                                          "appointment-soon",
+                                          IndicatorCategory.APPLICATION_STATUS);
                 indicator.set_status(IndicatorStatus.ACTIVE);
                 build_initial_menu();
         }

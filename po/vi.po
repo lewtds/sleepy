@@ -1,13 +1,13 @@
 # Vietnamese translations for sleepy package.
-# Copyright (C) 2011 THE sleepy'S COPYRIGHT HOLDER
+# Copyright (C) 2011, 2012 Ngô Trung <ndtrung4419@gmail.com>
 # This file is distributed under the same license as the sleepy package.
-# Ngô Chin <ndtrung4419@gmail.com>, 2011.
+# Ngô Chin <ndtrung4419@gmail.com>, 2011, 2012
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sleepy 0.1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-09 20:27+0700\n"
+"POT-Creation-Date: 2012-07-11 09:35+0700\n"
 "PO-Revision-Date: 2011-10-09 20:07+0700\n"
 "Last-Translator: Ngô Chin <ndtrung4419@gmail.com>\n"
 "Language-Team: Vietnamese <>\n"
@@ -21,15 +21,11 @@ msgstr ""
 msgid "Sleep Timer Indicator"
 msgstr "Sleep Timer Indicator"
 
-#. Note: We are building the menu upward
 #: ../src/trayicon.vala:30
 msgid "Stop"
 msgstr "Dừng lại"
 
-#. Remaining time
-#. Update the indicator status, icon,etc...
 #: ../src/trayicon.vala:43 ../src/trayicon.vala:108
-#, c-format
 msgid "%s left"
 msgstr "Còn %s nữa"
 
@@ -58,7 +54,6 @@ msgid "The clock is ticking..."
 msgstr "Đồng hồ đang chạy..."
 
 #: ../src/trayicon.vala:135
-#, c-format
 msgid "And it will go off at %s. You have %s left, have fun :-j"
 msgstr "Và sẽ đổ chuông lúc %s. Bạn còn %s nữa, cứ thoải mái đi :-j"
 
@@ -90,25 +85,19 @@ msgstr "Còn 5 phút nữa..."
 msgid "Please save your work and get ready for bed. ZzzZzz"
 msgstr "Thu xếp công việc rồi đi ngủ nào. ZzzZzz"
 
-#: ../src/utility.vala:53
-#, c-format
-msgid "%d hour"
-msgid_plural "%d hours"
-msgstr[0] "%d giờ"
+#~ msgid "%d hour"
+#~ msgid_plural "%d hours"
+#~ msgstr[0] "%d giờ"
 
-#: ../src/utility.vala:54
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] "%d phút"
+#~ msgid "%d minute"
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d phút"
 
-#: ../data/sleepy.desktop.in.h:1
-msgid "Sleep Timer"
-msgstr "Hẹn giờ đi ngủ"
+#~ msgid "Sleep Timer"
+#~ msgstr "Hẹn giờ đi ngủ"
 
-#: ../data/sleepy.desktop.in.h:2
-msgid "Tell you the best time to go to sleep"
-msgstr "Cho bạn biết khi nào nên đi ngủ để tỉnh dậy thật sảng khoái"
+#~ msgid "Tell you the best time to go to sleep"
+#~ msgstr "Cho bạn biết khi nào nên đi ngủ để tỉnh dậy thật sảng khoái"
 
 #~ msgid "The clock has started!"
 #~ msgstr "Đồng hồ đã chạy!"
