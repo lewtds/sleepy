@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sleepy 0.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-11 09:35+0700\n"
+"POT-Creation-Date: 2012-07-11 10:46+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,66 +21,74 @@ msgstr ""
 msgid "Sleep Timer Indicator"
 msgstr ""
 
-#: ../src/trayicon.vala:30
+#: ../src/trayicon.vala:32
 msgid "Stop"
 msgstr ""
 
-#: ../src/trayicon.vala:43 ../src/trayicon.vala:108
+#: ../src/trayicon.vala:45 ../src/trayicon.vala:110
 msgid "%s left"
 msgstr ""
 
-#: ../src/trayicon.vala:59
+#: ../src/trayicon.vala:61
 msgid "Set Timer"
 msgstr ""
 
-#: ../src/trayicon.vala:66
+#: ../src/trayicon.vala:68
 msgid "6:00 AM"
 msgstr ""
 
-#: ../src/trayicon.vala:74
+#: ../src/trayicon.vala:76
 msgid "6:30 AM"
 msgstr ""
 
-#: ../src/trayicon.vala:82
+#: ../src/trayicon.vala:84
 msgid "7:00 AM"
 msgstr ""
 
-#: ../src/trayicon.vala:98
+#: ../src/trayicon.vala:100
 msgid "Quit"
 msgstr ""
 
-#: ../src/trayicon.vala:134
+#: ../src/trayicon.vala:136
 msgid "The clock is ticking..."
 msgstr ""
 
-#: ../src/trayicon.vala:135
+#: ../src/trayicon.vala:137
 msgid "And it will go off at %s. You have %s left, have fun :-j"
 msgstr ""
 
-#: ../src/trayicon.vala:147
+#: ../src/trayicon.vala:149
 msgid "The clock has stopped!"
 msgstr ""
 
-#: ../src/trayicon.vala:164
+#: ../src/trayicon.vala:166
 msgid "30 minutes left..."
 msgstr ""
 
-#: ../src/trayicon.vala:164
+#: ../src/trayicon.vala:166
 msgid "Take your time. :-j"
 msgstr ""
 
-#: ../src/trayicon.vala:168
+#: ../src/trayicon.vala:170
 msgid "15 minutes left..."
 msgstr ""
 
-#: ../src/trayicon.vala:168
+#: ../src/trayicon.vala:170
 msgid "Maybe preparing the bed now is not a bad idea. ;)"
 msgstr ""
 
-#: ../src/trayicon.vala:172
+#: ../src/trayicon.vala:174
 msgid "5 minutes left..."
 msgstr ""
 
-#: ../src/trayicon.vala:172
+#: ../src/trayicon.vala:174
 msgid "Please save your work and get ready for bed. ZzzZzz"
+msgstr ""
+
+#: ../data/sleepy.desktop.template.h:1
+msgid "Sleep Timer"
+msgstr ""
+
+#: ../data/sleepy.desktop.template.h:2
+msgid "Tell you the best time to go to sleep"
 msgstr ""

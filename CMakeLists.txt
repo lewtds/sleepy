@@ -70,6 +70,6 @@ set(VALA_PKGS
 )
 
 add_subdirectory(src)
-add_subdirectory(data)
 add_subdirectory(po)
+add_subdirectory(data)
 
