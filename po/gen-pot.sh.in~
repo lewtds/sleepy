@@ -47,4 +47,4 @@ awk 'NR>18' $domain.desktop.pot >> $domain.pot
 
 sed --in-place $domain.pot --expression='s/CHARSET/UTF-8/'      
 
-rm $domain.desktop.pot
+rm $domain.dekstop.pot

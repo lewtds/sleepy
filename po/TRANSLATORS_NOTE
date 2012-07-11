@@ -1,0 +1,10 @@
+* To add a new language, run ./gen-po.sh
+* To generate new sleepy.pot, run ./gen-pot.sh
+* To update your po against the latest pot, run ./update-po.sh
+* If there are no *.sh, run these commands:
+cd ..
+mkdir build
+cd build
+cmake ..
+cd ../po
+rm -R ../build
