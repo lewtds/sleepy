@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=@VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@
+_Name=Sleep Timer
+_Comment=Tell you the best time to go to sleep
+Icon=appointment-soon
+Exec=sleepy
+Type=Application
+Categories=Utility;
+StartupNotify=true

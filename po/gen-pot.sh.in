@@ -18,6 +18,20 @@ copyright="@COPYRIGHT@"
 #         -L Glade \
 #         $filelist
 
+intltool-extract --quiet --type=gettext/ini ../data/$domain.desktop.template
+
+xgettext --package-name $domain \
+         --package-version $version \
+         --default-domain $domain \
+         --output $domain.desktop.pot \
+         --copyright-holder="$copyright" \
+         --from-code utf-8 \
+         -kN_:1 \
+         -C \
+         ../data/$domain.desktop.template.h
+
+rm ../data/$domain.desktop.template.h
+
 filelist=$( find ../src/ -name '*.vala' -printf "%h/%f " )         
 xgettext --package-name $domain \
          --package-version $version \
@@ -29,8 +43,8 @@ xgettext --package-name $domain \
          -L C# \
          $filelist
          
-#awk 'NR>18' $domain.pot.tmp >> $domain.pot
+awk 'NR>18' $domain.desktop.pot >> $domain.pot
 
 sed --in-place $domain.pot --expression='s/CHARSET/UTF-8/'      
 
-#rm $domain.pot.tmp
+rm $domain.dekstop.pot

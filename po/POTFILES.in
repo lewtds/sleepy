@@ -1,7 +1,0 @@
-src/main.vala
-src/sleeptimer.vala
-src/wizard.vala
-src/trayicon.vala
-src/utility.vala
-
-data/sleepy.desktop.in

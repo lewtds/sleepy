@@ -1,12 +1,15 @@
 #!/bin/bash
 
-echo "Insert the locale which you want to update:";
-read locale;
+#echo "Insert the locale which you want to update:";
+#read locale;
 
-if [ "$locale" == "" ]
-then
-    echo "No locale inserted! Aborting...";
-    exit 1
-fi
+#if [ "$locale" == "" ]
+#then
+#    echo "No locale inserted! Aborting...";
+#    exit 1
+#fi
 
-msgmerge -U $locale.po @APPNAME@.pot
+for locale in `cat LINGUAS`
+do 
+	msgmerge -U $locale.po @APPNAME@.pot
+done
