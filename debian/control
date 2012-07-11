@@ -9,8 +9,9 @@ Build-Depends: debhelper (>= 8.0.0),
  libnotify-dev,
  libgtk2.0-dev,
  libgtk-3-dev,
- python,
- intltool
+ intltool,
+ pkg-config,
+ cmake
 Standards-Version: 3.9.3
 #Homepage: <insert the upstream URL, if relevant>
 #Vcs-Git: git://git.debian.org/collab-maint/sleepy.git
