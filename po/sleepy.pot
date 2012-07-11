@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Ngo Trung <ndtrung4419@gmail.com>
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: sleepy 0.1.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-11 09:35+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/trayicon.vala:9
+msgid "Sleep Timer Indicator"
+msgstr ""
+
+#: ../src/trayicon.vala:30
+msgid "Stop"
+msgstr ""
+
+#: ../src/trayicon.vala:43 ../src/trayicon.vala:108
+msgid "%s left"
+msgstr ""
+
+#: ../src/trayicon.vala:59
+msgid "Set Timer"
+msgstr ""
+
+#: ../src/trayicon.vala:66
+msgid "6:00 AM"
+msgstr ""
+
+#: ../src/trayicon.vala:74
+msgid "6:30 AM"
+msgstr ""
+
+#: ../src/trayicon.vala:82
+msgid "7:00 AM"
+msgstr ""
+
+#: ../src/trayicon.vala:98
+msgid "Quit"
+msgstr ""
+
+#: ../src/trayicon.vala:134
+msgid "The clock is ticking..."
+msgstr ""
+
+#: ../src/trayicon.vala:135
+msgid "And it will go off at %s. You have %s left, have fun :-j"
+msgstr ""
+
+#: ../src/trayicon.vala:147
+msgid "The clock has stopped!"
+msgstr ""
+
+#: ../src/trayicon.vala:164
+msgid "30 minutes left..."
+msgstr ""
+
+#: ../src/trayicon.vala:164
+msgid "Take your time. :-j"
+msgstr ""
+
+#: ../src/trayicon.vala:168
+msgid "15 minutes left..."
+msgstr ""
+
+#: ../src/trayicon.vala:168
+msgid "Maybe preparing the bed now is not a bad idea. ;)"
+msgstr ""
+
+#: ../src/trayicon.vala:172
+msgid "5 minutes left..."
+msgstr ""
+
+#: ../src/trayicon.vala:172
+msgid "Please save your work and get ready for bed. ZzzZzz"
+msgstr ""
