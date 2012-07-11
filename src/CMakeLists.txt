@@ -12,7 +12,7 @@ CUSTOM_VAPIS
 )
 
 
-add_executable(sleepy, ${VALA_C})
+add_executable(sleepy ${VALA_C})
 
 install(TARGETS
     sleepy

@@ -3,9 +3,12 @@ cmake_minimum_required(VERSION 2.6)
 
 SET (APPNAME "${CMAKE_PROJECT_NAME}")
 SET (APPLONGNAME "Sleep Timer")
+SET (COPYRIGHT "Ngo Trung <ndtrung4419@gmail.com>")
 
-set (${APPNAME}_VERSION_MAJOR 1)
-set (${APPNAME}_VERSION_MINOR 0)
+
+set (VERSION_MAJOR 0)
+set (VERSION_MINOR 1)
+set (VERSION_PATCH 2)
 
 #set(GETTEXT_PACKAGE "sleepy")
 
@@ -30,7 +33,7 @@ pkg_check_modules(NOTIFY REQUIRED libnotify)
 
 set(CFLAGS
   ${GTK2_CLAGS} ${GTK2_CFLAGS_OTHER}
-  -DGETTEXT_PACKAGE="sleepy"
+  -DGETTEXT_PACKAGE="${APPNAME}"
 )
 add_definitions(${CFLAGS})
 
@@ -67,4 +70,6 @@ set(VALA_PKGS
 )
 
 add_subdirectory(src)
+add_subdirectory(data)
+add_subdirectory(po)
 
