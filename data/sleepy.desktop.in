@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=0.1.0
-_Name=Sleep Timer
-_Comment=Tell you the best time to go to sleep
+Name=Sleep Timer
+Comment=Tell you the best time to go to sleep
 Icon=appointment-soon
 Exec=sleepy
 Type=Application
